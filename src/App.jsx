@@ -1,4 +1,5 @@
 import { AddTask } from "./AddTask";
+import { Plus, Check, X, Edit2, Save } from 'lucide-react';
 
 function App() {
 
