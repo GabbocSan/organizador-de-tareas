@@ -18,6 +18,16 @@ export function AddTask () {
         }    
     }
 
+    const toggleComplete = (id) => {
+        setTasks(tasks.map(task => 
+            task.id === id ? { ...task, completed: !task.completed } : task
+        ));
+    };
+
+    const deleteTask = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    };
+
     return(
         <>
         <div>
@@ -34,8 +44,14 @@ export function AddTask () {
         <div>
           {tasks.map((task) => (
             <div key={task.id}>
-              <p>{task.text}</p>
-              <p>Creada: {task.createdAt}</p>
+                <button onClick={() => toggleComplete(task.id)}>
+                    {task.completed ? '✅' : '⭕'}
+                </button>
+                <p>{task.text}</p>
+                <button onClick={() => deleteTask(task.id)}>
+                    ❌ Eliminar
+                </button>
+                <p>Creada: {task.createdAt}</p>
             </div>
           ))}
         </div>
