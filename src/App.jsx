@@ -1,4 +1,4 @@
-import { AddTask } from "./AddTask";
+import { TaskManager } from "./components/TaskManager"
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
             Organiza tus actividades
           </p>
         </div>
-        <AddTask/>
+        <TaskManager/>
       </div>
     </div>
       
